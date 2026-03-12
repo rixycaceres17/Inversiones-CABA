@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="img/CABA.jpg" type="image/png" sizes="16x16">
+<title>Inversiones CABA</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+<nav>
+
+<h1>Inversiones CABA</h1>
+
+<ul>
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#nosotros">Nosotros</a></li>
+<li><a href="#productos">Productos</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+
+</nav>
+</header>
+<section id="inicio" class="inicio">
+
+<h2>Bienvenidos a Inversiones CABA</h2>
+
+<p>Inversiones CABA es un negocio dedicado a ofrecer productos de calidad,
+brindando un excelente servicio y precios accesibles para nuestros clientes.</p>
+
+<img src="img/CABA.jpg" alt="Local del negocio">
+
+</section>
+
+<section id="nosotros">
+<h2>Nosotros</h2>
+<div class="bloque">
+<h3>Historia</h3>
+<p>Inversiones CABA nació con el sueño de emprender y ofrecer productos útiles para la comunidad.
+ El nombre CABA representa la unión de dos familias emprendedoras, Cáceres y Barahona, quienes crearon
+ un negocio sólido y con visión de crecimiento.</p>
+<p>Inició en abril de 2021 con una inversión de 50,000, dedicándose al ámbito de la abarrotería en general, 
+con productos de consumo diario y un enfoque especial en artículos de plásticos desechables.</p>
+</div>
+
+<div class="bloque">
+<h3>Misión</h3>
+<p>Nuestra misión es brindar productos de calidad que satisfagan las necesidades
+ de nuestros clientes.</p>
+ </div>
+
+ <div class="bloque">
+<h3>Visión</h3>
+<p>Nuestra visión es ser una empresa reconocida a nivel nacional por brindar
+un servicio de eficiencia y calidad para nuestros clientes.</p>
+</div>
+
+</section>
+<section id="productos">
+
+<h2>Productos</h2>
+
+<div class="productos">
+
+<div class="producto">
+<img src="img/producto1.jpg">
+<h3>Platos Desechables</h3>
+<p>Prácticos y resistentes para cualquier comida o evento.</p>
+</div>
+
+<div class="producto">
+<img src="img/producto2.PNG">
+<h3>Condimentos</h3>
+<p>Especias y mezclas para realzar el sabor de tus platos.</p>
+</div>
+
+<div class="producto">
+<img src="img/producto3.JPG">
+<h3>Aceite</h3>
+<p>Aceites puros para cocinar, freír o aderezar con calidad.</p>
+</div>
+
+<div class="producto">
+<img src="img/producto4.webp">
+<h4>Servilletas</h4>
+<p>Suaves y absorbentes, perfectas para uso diario o eventos.</p>
+</div>
+
+<div class="producto">
+<img src="img/producto5.jpg">
+<h5>Mayonesas</h5>
+<p>Cremosas y deliciosas, ideales para acompañar cualquier platillo.</p>
+</div>
+
+<div class="producto">
+<img src="img/producto6.jpg">
+<h6>Bolsas Plásticas</h6>
+<p>Resistentes y prácticas para transportar o almacenar productos.</p>
+</div>
+
+<div class="producto">
+<img src="img/producto7.webp">
+<h3>Salsas</h3>
+<p>Deliciosas y listas para usar, aportan sabor y personalidad a tus platillos.</p>
+</div>
+
+<div class="producto">
+<img src="img/producto8.jpg">
+<h4>Papel de Aluminio</h4>
+<p>Resistente y versátil, perfecto para cocinar, conservar y proteger alimentos.</p>
+</div>
+
+<div class="producto">
+<img src="img/producto9.webp">
+<h5>Papel Higiénico</h5>
+<p>Suave y absorbente, ideal para uso diario en el hogar o la oficinas.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contacto">
+
+<h2>Contacto</h2>
+
+<form id="formContacto">
+
+<label>Nombre</label>
+<input type="text" id="nombre" required>
+
+<label>Correo</label>
+<input type="email" id="correo" required>
+
+<label>Teléfono</label>
+<input type="tel" id="telefono">
+
+<label>Mensaje</label>
+<textarea id="mensaje" rows="4"></textarea>
+
+<button type="submit">Enviar</button>
+
+</form>
+
+<p id="mensajeExito" style="color:green; display:none; margin-top:10px;">¡Mensaje enviado correctamente!</p>
+
+</section>
+
+<script>
+const form = document.getElementById('formContacto');
+const mensajeExito = document.getElementById('mensajeExito');
+
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const nombre = document.getElementById('nombre').value;
+    const correo = document.getElementById('correo').value;
+    const telefono = document.getElementById('telefono').value;
+    const mensaje = document.getElementById('mensaje').value;
+
+    const contacto = {
+        nombre: nombre,
+        correo: correo,
+        telefono: telefono,
+        mensaje: mensaje,
+        fecha: new Date().toLocaleString()
+    };
+age
+    let contactos = JSON.parse(localStorage.getItem('contactos')) || [];
+    contactos.push(contacto);
+    localStorage.setItem('contactos', JSON.stringify(contactos));
+    mensajeExito.style.display = 'block';
+
+    form.reset();
+ndos
+    setTimeout(() => {
+        mensajeExito.style.display = 'none';
+    }, 3000);
+});
+</script>
+
+</form>
+
+</section>
+<footer>
+<p>© 2026 Inversiones CABA</p>
+</footer>
+
+</body>
+</html>
